@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./db');
+const db = require('../db');
 
 
 const app = express();
@@ -62,6 +62,9 @@ app.get('/duas/:subcategoryId', (req, res) => {
         res.json(rows);
     });
 });
+app.get('/',(req, res) =>{
+   res.send("Dua Server is running")
+})
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
